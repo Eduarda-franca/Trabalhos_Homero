@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" 
+            fx:controller="app.TelaPrincipalController"
+            prefWidth="600" prefHeight="450" 
+            stylesheets="@estilos.css">
+    
+    <top>
+        <Label text="Gerenciador de Tarefas" 
+               style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #333;"
+               BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets top="20" bottom="20"/>
+            </BorderPane.margin>
+        </Label>
+    </top>
+    
+    <center>
+        <TableView fx:id="tabelaTarefas">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="50" />
+                <TableColumn fx:id="colTitulo" text="Título" prefWidth="200" />
+                <TableColumn fx:id="colDescricao" text="Descrição" prefWidth="200" />
+                <TableColumn fx:id="colStatus" text="Status" prefWidth="100" />
+            </columns>
+            <BorderPane.margin>
+                <Insets left="20" right="20"/>
+            </BorderPane.margin>
+        </TableView>
+    </center>
+    
+    <bottom>
+        <HBox spacing="10" alignment="CENTER">
+            <HBox.margin>
+                <Insets top="15" bottom="20"/>
+            </HBox.margin>
+            <Button text="Nova Tarefa" onAction="#abrirCadastro"/>
+            <Button text="Editar Tarefa" onAction="#editarTarefa"/>
+            <Button text="Concluir" onAction="#concluirTarefa"/>
+            <Button text="Remover" styleClass="button-danger" onAction="#removerTarefa"/>
+        </HBox>
+    </bottom>
+
+</BorderPane> 

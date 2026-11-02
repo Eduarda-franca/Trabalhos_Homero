@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<GridPane xmlns:fx="http://javafx.com/fxml" 
+          fx:controller="app.TelaCadastroController"
+          alignment="CENTER" hgap="10" vgap="15" 
+          prefWidth="400" prefHeight="300"
+          stylesheets="@estilos.css">
+    
+    <Label text="Título:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    <TextField fx:id="txtTitulo" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+    <Label text="Descrição:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <TextArea fx:id="txtDescricao" GridPane.columnIndex="1" GridPane.rowIndex="1" prefHeight="80"/>
+
+    <Label text="Prioritária?" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <CheckBox fx:id="chkPrioritaria" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+    <HBox spacing="15" alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.columnSpan="2">
+        <Button text="Salvar" onAction="#salvarTarefa"/>
+        <Button text="Cancelar" styleClass="button-danger" onAction="#cancelar"/>
+    </HBox>
+</GridPane>
